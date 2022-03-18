@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BlogOnRails</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+  <nav>
+  <h2 class = "nav-item" ><%= link_to "Blog On Rails", posts_path %></h3>
+  <h3 class = "nav-item1" > <%= link_to "New Post", new_post_path %> </h3>
+  <h3 class = "nav-item2" > <%= link_to "Home", posts_path %> </h3>
+  </nav>
+    <%= yield %>
+  </body>
+</html>

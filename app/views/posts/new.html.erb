@@ -1,0 +1,13 @@
+<%= form_with model:@post do |form| %>
+    <div>
+    <%= form.label :title, "Title", class: "edit-title"%>
+    <br>
+    <%= form.text_field :title, class: "input-field" %>
+    <br>
+    <%= form.label :body, "Caption", class: "edit-caption" %>
+    <br>
+    <%= form.text_field :body, class: "input-field" %>
+    <br>
+    <%= form.submit "Create", class: "btn btn-outline-primary update-button"%>
+    </div>
+<%end%>
