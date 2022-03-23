@@ -13,14 +13,20 @@ Post.destroy_all
     random_title = alphabet.to_a.shuffle.join
     random_body = alphabet.to_a.shuffle.join * 2
     
-    Post.create(
+    p = Post.create(
         title: random_title,
         body: random_body,
-
+        user_id: 1
     )
+    if p.valid?
+        rand(1..5).times do
+            Comment.create(body: random_title, post: p, user_id: 2)
+        end
+    end
 
 end
 
 posts = Post.all
-
+comments = Comment.all
 puts "generated #{posts.count} posts"
+puts "generated #{comments.count} comments"

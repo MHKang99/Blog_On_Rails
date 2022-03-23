@@ -3,6 +3,7 @@
 <h3 class = "show-title"> <%= @post.title %> </h3>
 <p class = "show-body" > <%= @post.body %> </p>
 <p class = "created-at"> Posted <%= time_ago_in_words(@post.created_at) %> ago</p>
+<p class = "created-at"> Created By <%= @username.name %> </p>
 <button type="button" class="btn btn-outline-primary"><%= link_to "Edit", edit_post_path(@post.id) %></button>
 <%= button_to("Delete", post_path, method: :delete, class: 'btn btn-outline-primary delete-button')%>
 </div>
@@ -25,6 +26,7 @@
     <% @post.comments.each do |comment| %>
       <p class = "comment"> <%= comment.body %> </p>
       <p class = "created-at"> Created <%= time_ago_in_words(comment.created_at) %> ago</p>
+      <p class = "created-at"> Created By<%= @commentusername %></p> 
      <%= button_to("Delete", post_comment_path(@post.id, comment.id), method: :delete, class: 'btn btn-outline-primary delete-comment-button') %>
     <% end %>
 <% end %>

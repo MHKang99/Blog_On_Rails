@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 
     def show
         @post = Post.find params[:id]
+        @username = User.find_by_id @post.user_id
         @comment = Comment.new
     end
     
@@ -14,7 +15,8 @@ class PostsController < ApplicationController
     end
 
     def create
-        @post = Post.new params.require(:post).permit(:title, :body)
+        @post = Post.new params.require(:post).permit(:title, :body, :user_id)
+        @post.user_id = cookies[:user_id]
         if @post.save 
             redirect_to post_path(@post.id)
         else 

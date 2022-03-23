@@ -15,7 +15,15 @@
   <h2 class = "nav-item" ><%= link_to "Blog On Rails", posts_path %></h3>
   <h3 class = "nav-item1" > <%= link_to "New Post", new_post_path %> </h3>
   <h3 class = "nav-item2" > <%= link_to "Home", posts_path %> </h3>
+  
   </nav>
+  <%if(user_signed_in?) %>
+       <h2>You are Signed In</h2> 
+      <%= button_to "Log out", sign_out_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Sign In Page', session_new_path%>
+      <%= link_to 'Sign Up Page', new_user_path%>
+    <% end %>
     <%= yield %>
   </body>
 </html>
