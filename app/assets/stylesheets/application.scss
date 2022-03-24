@@ -1,0 +1,188 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap";
+
+nav {
+    background-color: rgb(230, 248, 248);
+    height: 75px;
+    
+}
+
+a {
+    text-decoration: none;
+    color: rgb(56, 156, 196);
+}
+
+.nav-item {
+    font-size: 32px;
+    position: absolute;
+    margin-left: 15px;
+    top: 12.5px;
+}
+
+.nav-item1 {
+    font-size: 20px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.nav-item2 {
+    font-size: 20px;
+    position: absolute;
+    right: 150px;
+    top: 20px;
+}
+
+h2 {
+    color: rgb(56, 156, 196);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+h3 {
+    color: rgb(56, 156, 196);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media screen and (max-width: 1300px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+
+.container {
+    width: 460px;
+    margin: 20px;
+    height: 95px;    
+    border-style: solid;
+    border-radius: 5px;
+    border-color: rgb(231, 231, 231);
+    border-width: 0.5px;
+}
+
+.container * {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.title {
+    width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.preview {
+    margin-left: 20px;
+    width: 380px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// show page stuff
+
+.show-title {
+    color: black;
+    font-size: 45px;
+}
+
+.show-body {
+    font-size: 25px;
+}
+
+.created-at {
+    font-size: 15px;
+}
+
+.post {
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.comment-form {
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.form-body {
+    font-size: 30px;
+    color: black;
+}
+
+.delete-button {
+    position: absolute;
+    left: 75px;
+    top: 239px;
+}
+
+.text-area {
+    margin-bottom: 10px;
+}
+
+.delete-comment-button {
+    font-size: 15px;
+    border: none;
+    position: relative;
+    top: -44px;
+    left: 200px;
+}
+
+.comments {
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.edit-title {
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+.edit-caption {
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+.update-button {
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.input-field {
+    margin-left: 15px;
+}
