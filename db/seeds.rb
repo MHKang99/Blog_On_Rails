@@ -7,6 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 Post.destroy_all
+Comment.destroy_all
+
 
 50.times do
     alphabet = "a".."z"
@@ -16,11 +18,11 @@ Post.destroy_all
     p = Post.create(
         title: random_title,
         body: random_body,
-        user_id: 1
-    )
-    if p.valid?
+        user_id: 7
+        if p.valid?
+            )
         rand(1..5).times do
-            Comment.create(body: random_title, post: p, user_id: 2)
+            Comment.create(body: random_title, post: p, user_id: 8)
         end
     end
 

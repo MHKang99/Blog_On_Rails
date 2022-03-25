@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
         flash.notice = "Logged out"
         redirect_to root_path
     end
-
+    
     private
 
     def user_params

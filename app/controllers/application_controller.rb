@@ -6,7 +6,8 @@ class ApplicationController < ActionController::Base
             redirect_to session_new_path
         end
     end
-    
+
+
 
     def user_signed_in?
         current_user.present?

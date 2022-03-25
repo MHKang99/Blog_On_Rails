@@ -5,7 +5,6 @@ class CommentsController < ApplicationController
         @comment = Comment.new params.require(:comment).permit(:body, :user_id)
         @comment.post = @post
         @comment.user_id = cookies[:user_id]
-        @commentusername = User.find_by_id @comment.user_id
         if @comment.save
             puts "saved"
             redirect_to post_path(@post.id)
