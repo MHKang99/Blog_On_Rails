@@ -1,0 +1,39 @@
+
+<div class = "post" >
+<h3 class = "show-title"> <%= @post.title %> </h3>
+<p class = "show-body" > <%= @post.body %> </p>
+<p class = "created-at"> Posted <%= time_ago_in_words(@post.created_at) %> ago</p>
+<p class = "created-at"> Created By <%= @username.name %> </p>
+<% if user_signed_in? && current_user.id == @post.user_id %>
+<button type="button" class="btn btn-outline-primary"><%= link_to "Edit", edit_post_path(@post.id) %></button>
+<%= button_to("Delete", post_path, method: :delete, class: 'btn btn-outline-primary delete-button')%>   
+<% end %>
+</div>
+
+
+<div class = "comment-form" >
+<%= form_with(model:[@post, @comment]) do |form| %>
+    <h3 class = "form-body">
+    <%= form.label :body, "Comment"%>
+    </h3>
+    <div class = "text-area">
+    <%= form.text_field :body, placeholder: "What's on your mind?"%>
+    </div>
+    <% if user_signed_in? %>
+    <%= form.submit("Submit",class: 'btn btn-outline-primary')  %>
+    <% end %>
+    
+<%end%>
+</div>
+<div class = "comments"  >
+<%  if @post.comments %>
+    <% @post.comments.each do |comment| %>
+      <p class = "comment"> <%= comment.body %> </p>
+      <p class = "created-at"> Created <%= time_ago_in_words(comment.created_at) %> ago</p>
+      <p class = "created-at"> Created By <%= (User.find_by_id comment.user_id).name %></p>
+      <% if user_signed_in? && current_user.id == comment.user_id %>
+        <%= button_to("Delete", post_comment_path(@post.id, comment.id), method: :delete, class: 'btn btn-outline-primary delete-comment-button') %>
+      <% end %> 
+    <% end %>
+<% end %>
+</div>
